@@ -15,8 +15,6 @@
             font-family: system-ui, sans-serif;
         }
         h1 { font-size: 3rem; margin-bottom: 2rem; }
-        .group { margin: 10px 0; }
-        .label { font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px; }
         nav { display: flex; gap: 10px; }
         a {
             color: white;
@@ -30,23 +28,30 @@
 </head>
 <body onload="if (!window.name) window.name = 'blue'">
     <h1>BLUE PAGE</h1>
+    <nav>
+        <a href="page-red.html">Red</a>
+        <a href="page-green.html">Green</a>
+        <a href="page-blue.html">Blue</a>
+    </nav>
 
-    <div class="group">
-        <div class="label">Own tab (named after color)</div>
-        <nav>
-            <a href="page-red.html" target="red">Red</a>
-            <a href="page-green.html" target="green">Green</a>
-            <a href="page-blue.html" target="blue">Blue</a>
-        </nav>
-    </div>
+    <script>
+        const routes = {
+            'page-red.html': 'red',
+            'page-green.html': 'green',
+            'page-blue.html': 'blue',
+        };
 
-    <div class="group">
-        <div class="label">Shared tab (all use "shared")</div>
-        <nav>
-            <a href="page-red.html" target="shared">Red</a>
-            <a href="page-green.html" target="shared">Green</a>
-            <a href="page-blue.html" target="shared">Blue</a>
-        </nav>
-    </div>
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const href = link.getAttribute('href');
+            const target = routes[href];
+            if (!target) return;
+
+            e.preventDefault();
+            window.open(link.href, target);
+        });
+    </script>
 </body>
 </html>
