@@ -24,7 +24,6 @@
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
-            cursor: pointer;
         }
         a:hover { background: rgba(0,0,0,0.4); }
     </style>
@@ -35,18 +34,18 @@
     <div class="group">
         <div class="label">Own tab (named after color)</div>
         <nav>
-            <a onclick="window.open('page-red.html', 'red')">Red</a>
-            <a onclick="window.open('page-green.html', 'green')">Green</a>
-            <a onclick="window.open('page-blue.html', 'blue')">Blue</a>
+            <a href="page-red.html" target="red">Red</a>
+            <a href="page-green.html" target="green">Green</a>
+            <a href="page-blue.html" target="blue">Blue</a>
         </nav>
     </div>
 
     <div class="group">
         <div class="label">Shared tab (all use "shared")</div>
         <nav>
-            <a onclick="window.open('page-red.html', 'shared')">Red</a>
-            <a onclick="window.open('page-green.html', 'shared')">Green</a>
-            <a onclick="window.open('page-blue.html', 'shared')">Blue</a>
+            <a href="page-red.html" target="shared">Red</a>
+            <a href="page-green.html" target="shared">Green</a>
+            <a href="page-blue.html" target="shared">Blue</a>
         </nav>
     </div>
 </body>
