@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Red Page</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #e53935;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, sans-serif;
+        }
+        h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .group { margin: 10px 0; }
+        .label { font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px; }
+        nav { display: flex; gap: 10px; }
+        a {
+            color: white;
+            background: rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover { background: rgba(0,0,0,0.4); }
+    </style>
+</head>
+<body onload="if (!window.name) window.name = 'red'">
+    <h1>RED PAGE</h1>
+
+    <div class="group">
+        <div class="label">Own tab (named after color)</div>
+        <nav>
+            <a onclick="window.open('page-red.html', 'red')">Red</a>
+            <a onclick="window.open('page-green.html', 'green')">Green</a>
+            <a onclick="window.open('page-blue.html', 'blue')">Blue</a>
+        </nav>
+    </div>
+
+    <div class="group">
+        <div class="label">Shared tab (all use "shared")</div>
+        <nav>
+            <a onclick="window.open('page-red.html', 'shared')">Red</a>
+            <a onclick="window.open('page-green.html', 'shared')">Green</a>
+            <a onclick="window.open('page-blue.html', 'shared')">Blue</a>
+        </nav>
+    </div>
+</body>
+</html>
